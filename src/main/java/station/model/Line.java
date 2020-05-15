@@ -1,6 +1,5 @@
 package station.model;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -14,12 +13,12 @@ import javax.persistence.ManyToOne;
 public class Line {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private Double price;
 	private Date departureDate;
-	private Timestamp departureTime;
+	private Date departureTime;
 	private String arrivalCity;
 	private Integer numberOfSeatsAvail;
 
@@ -50,11 +49,11 @@ public class Line {
 		this.departureDate = departureDate;
 	}
 
-	public Timestamp getDepartureTime() {
+	public Date getDepartureTime() {
 		return departureTime;
 	}
 
-	public void setDepartureTime(Timestamp departureTime) {
+	public void setDepartureTime(Date departureTime) {
 		this.departureTime = departureTime;
 	}
 

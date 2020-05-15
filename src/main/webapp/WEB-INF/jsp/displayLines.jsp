@@ -14,7 +14,6 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th scope="col">Departure Date</th>
 				<th scope="col">Departure Time</th>
 				<th scope="col">Arrival City</th>
 				<th scope="col">Price</th>
@@ -25,7 +24,6 @@
 		<tbody>
 			<c:forEach items="${lines }" var="line">
 				<tr>
-					<td>${line.departureDate }</td>
 					<td>${line.departureTime }</td>
 					<td>${line.arrivalCity }</td>
 					<td>${line.price }</td>

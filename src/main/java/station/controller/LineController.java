@@ -16,27 +16,24 @@ import station.repository.LineRepository;
 
 @Controller
 public class LineController {
-	
+
 	@Autowired
 	LineRepository lineRepository;
-	
-	@RequestMapping(value="findLine", method=RequestMethod.POST)
-	public String findLine(
-			@RequestParam("to") String arrivalCity,
-			@RequestParam("departureDate") @DateTimeFormat(pattern="MM-dd-yyyy") Date departureDate,
-			ModelMap modelMap) 
-	{
+
+	@RequestMapping(value = "/findLine", method = RequestMethod.POST)
+	public String findLine(@RequestParam("to") String arrivalCity,
+			@RequestParam("departureDate") @DateTimeFormat(pattern = "MM-dd-yyyy") Date departureDate,
+			ModelMap modelMap) {
 		List<Line> lines = lineRepository.findLine(arrivalCity, departureDate);
 		modelMap.addAttribute("lines", lines);
-		
+
 		return "displayLines";
 	}
-	
-	
-	  @RequestMapping("admin/showAddLines") public String showAddLine() { return
-	  "addLine";
-	  
-	  }
-	 
+
+	@RequestMapping("/admin/showAddLines")
+	public String showAddLine() {
+		return "addLine";
+
+	}
 
 }
