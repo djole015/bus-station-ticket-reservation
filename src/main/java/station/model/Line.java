@@ -16,10 +16,10 @@ public class Line {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Double price;
+	private String arrivalCity;
 	private Date departureDate;
 	private Date departureTime;
-	private String arrivalCity;
+	private Double price;
 	private Integer numberOfSeatsAvail;
 
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -79,6 +79,13 @@ public class Line {
 
 	public void setNumberOfSeatsAvail(Integer numberOfSeatsAvail) {
 		this.numberOfSeatsAvail = numberOfSeatsAvail;
+	}
+
+	@Override
+	public String toString() {
+		return "Line [id=" + id + ", arrivalCity=" + arrivalCity + ", departureDate=" + departureDate
+				+ ", departureTime=" + departureTime + ", price=" + price + ", numberOfSeatsAvail=" + numberOfSeatsAvail
+				+ ", carrier=" + carrier + "]";
 	}
 
 }

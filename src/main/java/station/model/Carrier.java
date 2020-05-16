@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 public class Carrier {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String name;
@@ -64,7 +64,11 @@ public class Carrier {
 	public void setLines(List<Line> lines) {
 		this.lines = lines;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Carrier [id=" + id + ", name=" + name + ", address=" + address + ", pib=" + pib + ", lines=" + lines
+				+ "]";
+	}
 
 }
