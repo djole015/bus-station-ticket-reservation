@@ -81,11 +81,4 @@ public class Line {
 		this.numberOfSeatsAvail = numberOfSeatsAvail;
 	}
 
-	@Override
-	public String toString() {
-		return "Line [id=" + id + ", arrivalCity=" + arrivalCity + ", departureDate=" + departureDate
-				+ ", departureTime=" + departureTime + ", price=" + price + ", numberOfSeatsAvail=" + numberOfSeatsAvail
-				+ ", carrier=" + carrier + "]";
-	}
-
 }

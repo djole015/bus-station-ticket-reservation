@@ -22,7 +22,7 @@ public class LineController {
 
 	@Autowired
 	LineRepository lineRepository;
-	
+
 	@Autowired
 	CarrierRepository carrierRepository;
 
@@ -39,25 +39,21 @@ public class LineController {
 	@RequestMapping("/admin/showAddLines")
 	public String showAddLine(ModelMap modelMap) {
 		List<Carrier> carriers = carrierRepository.findAll();
-		
+
 		modelMap.addAttribute("carriers", carriers);
 		return "addLine";
 
 	}
-	
+
 	@RequestMapping(value = "/admin/addLine", method = RequestMethod.POST)
-	public String addLine(
-			@RequestParam("to") String arrivalCity,
+	public String addLine(@RequestParam("to") String arrivalCity,
 			@RequestParam("departureDate") @DateTimeFormat(pattern = "MM-dd-yyyy") Date departureDate,
 			@RequestParam("departureTime") @DateTimeFormat(pattern = "MM-dd-yyyy HH:mm") Date departureTime,
-			@RequestParam("price") Double price,
-			@RequestParam("seats") Integer seatsAvail,
-			@RequestParam("carrierId") Long id
-			) 
-		{
-		
+			@RequestParam("seats") Integer seatsAvail, @RequestParam("price") Double price,
+			@RequestParam("carrierId") Long id) {
+
 		Carrier carrier = carrierRepository.getOne(id);
-		
+
 		Line line = new Line();
 		line.setArrivalCity(arrivalCity);
 		line.setDepartureDate(departureDate);
@@ -65,8 +61,6 @@ public class LineController {
 		line.setPrice(price);
 		line.setNumberOfSeatsAvail(seatsAvail);
 		line.setCarrier(carrier);
-		
-		System.out.println(line);
 
 		lineRepository.save(line);
 

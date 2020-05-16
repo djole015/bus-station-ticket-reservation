@@ -65,10 +65,4 @@ public class Carrier {
 		this.lines = lines;
 	}
 
-	@Override
-	public String toString() {
-		return "Carrier [id=" + id + ", name=" + name + ", address=" + address + ", pib=" + pib + ", lines=" + lines
-				+ "]";
-	}
-
 }
