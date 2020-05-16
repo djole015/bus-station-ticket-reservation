@@ -70,7 +70,7 @@ public class LineController {
 
 		lineRepository.save(line);
 
-		return "showLine";
+		return "addLineConfirmation";
 	}
 
 }
